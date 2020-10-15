@@ -11,10 +11,10 @@ case $OPTION in
     n)
         number=$OPTARG
         ;;
-    m)
+    a)
         archiveName=$OPTARG
         ;;
-    a)
+    m)
         fileName=$OPTARG
         ;;
     *)
