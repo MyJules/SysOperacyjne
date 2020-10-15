@@ -2,7 +2,7 @@
 
 number=2
 archiveName='defArchive'
-fileName='defFile'
+fileName='*.cpp'
 
 #read input
 while getopts "n:m:a:" OPTION
@@ -30,3 +30,4 @@ echo "$archiveName"
 echo "$fileName"
 
 #find
+find /home/andrew -type f -name $fileName 
