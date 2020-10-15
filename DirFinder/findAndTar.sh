@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
-number=2
-archiveName='defArchive'
+number=7
+archiveName='defArchive.tar'
 fileName='*.cpp'
 
 #read input
@@ -29,5 +29,5 @@ echo $number
 echo "$archiveName"
 echo "$fileName"
 
-#find
-find /home/andrew -type f -name $fileName 
+#find + archiwacja
+find /home -type f -name $fileName -mtime -$number | tar -zcvf $archiveName -T -
