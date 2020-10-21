@@ -34,40 +34,34 @@ done
 #czytamy environment value jezeli nie byly podane 
 #w parametrach
 if  $isNumberRead ; then
-    echo "Number was readed"
+    echo ""
 else
-    echo "!Nuber was not readed"
 
     if [[ -z "${F_DATE}" ]]; then
-        echo "Undefind"
+        echo "Date name have default value..."
     else
-        echo "Defined"
-        number = F_DATE
+        number=$F_DATE
     fi
 fi
 
 if  $isFileNameRead ; then
-    echo "File Name was readed"
+    echo ""
 else
-    echo "!File Name was not readed"
 
     if [[ -z "${F_FILE_NAME}" ]]; then
-        echo "Undefind"
+        echo "File name have default value..."
     else
-        echo "Defined"
         fileName=$F_FILE_NAME
     fi
 fi
 
 if  $isArchiveNameRead ; then
-    echo "Archive Name was readed"
+    echo ""
 else
-    echo "!Archive Name was not readed"
 
     if [[ -z "${F_ARCHIVE_NAME}" ]]; then
-        echo "Undefind"
+        echo "Archive name have default value..."
     else
-        echo "Defined"
         archiveName=$F_ARCHIVE_NAME
     fi
 
