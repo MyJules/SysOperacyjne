@@ -1,0 +1,17 @@
+Zad 4:
+    Żeby wykonać zadanie napisałem dwa skrypty: read.sh, write.sh .
+    Skrypt write.sh każde 0.5s natomiast read.sh zawsze czta z pliku.
+
+    Teraz można w różnych terminałach wywołać te skrypty i zobaczyć jak
+    to działą. Widać, że potoki czytające z FIFO robią wypadkowo,
+    czasem jeden z nich przyjmuje wiadomość, a czasem inny.
+
+    Przy zabijaniu procesu pisania, wszystkie prosesy czytania nadal
+    działają i czekają na wejście, jest ono wykonywane w nieskończonej
+    pętli ale samo polecenie cat zawiesza się i czeka na wejście
+    samodzielne, jeżeli by nie było pętli, to cat samo poczeka na
+    wejście i wyłączy się kiedy dostanie coś na wejście.
+
+    Natomiast operacje zapisywania zabija się kiedy wysyła pierwszy
+    komunikat i oczywiście nie czeka na jego odebrania.
+Zad 5:
