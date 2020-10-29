@@ -2,6 +2,6 @@
 pipe=FIFO
 
 while :; do
-    echo "Hello" > $pipe
-    sleep .5
+    echo $(date) > $pipe
+    sleep 1.0
 done
