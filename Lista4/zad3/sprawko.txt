@@ -1,0 +1,12 @@
+proc - pseudosystem plików z informacjami o procesach. Służy
+interfejsem do struktur jądra.
+
+/proc - jest plikiem z procesami, można ich otwarzać i zapisywać
+jak zwykle pliki.
+
+/proc/[pid]
+  każdemu procesowi odpowiada katalog. Pomaga to izolowaniu każdego
+z urzytkowników.
+
+Można naprzykład urochomić włąsny program, odczytać go pid i
+spróbować przejść do odpowiednigo katałogu, co da się zrobić.

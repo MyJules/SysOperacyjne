@@ -1,0 +1,7 @@
+Kody dla sygnałów:
+    SIGALRM -14
+    SIGTERM -15
+    SIGUSR1 -12
+    SIGUSR2 -10
+
+SIGUSR - dla sygnalów użytkownika.
