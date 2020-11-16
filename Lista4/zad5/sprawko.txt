@@ -1,25 +1,23 @@
-strace - jest komędą dla debagowania i diagnostyki.
-Można odśliadywać różne rzeczy: 
--e trace=%desc     Trace all file descriptor related system calls.
-         %file     Trace all system calls which take a file name as an argument.
-         %fstat    Trace fstat and fstatat syscall variants.
-         %fstatfs  Trace fstatfs, fstatfs64, fstatvfs, osf_fstatfs, and osf_fstatfs64 system calls.
-         %ipc      Trace all IPC related system calls.
-         %lstat    Trace lstat syscall variants.
-         %memory   Trace all memory mapping related system calls.
-         %network  Trace all the network related system calls.
-         %process  Trace all system calls which involve process management.
-         %pure     Trace syscalls that always succeed and have no arguments.
-         %signal   Trace all signal related system calls.
-         %stat     Trace stat syscall variants.
-         %statfs   Trace statfs, statfs64, statvfs, osf_statfs, and osf_statfs64 system calls.
-         %%stat    Trace syscalls used for requesting file status.
-         %%statfs  Trace syscalls related to file system statistics.
+strace - jest komędą dla debagowania i diagnostyki. Polecenie można korzystaćuruchamiając
+probram pod kontrolą trace lub podłączają się do już działającego procesu.
 
-Także można odśliadywać tylko system calls:
-$ strace -P /etc/ld.so.cache ls /var/empty
-open("/etc/ld.so.cache", O_RDONLY) = 3
-fstat(3, {st_mode=S_IFREG|0644, st_size=22446, ...}) = 0
-mmap(NULL, 22446, PROT_READ, MAP_PRIVATE, 3, 0) = 0x2b7ac2ba9000
-close(3) = 0
-+++ exited with 0 +++
+-p [pid] pozwala dołączyć strace do procesu.
+
+-c pozwala na generowanie raportu total time, calls, arrors dla każdego wywołania
+systemowego.
+(strace -c -p [PID])
+
+-i zwraza pointer na instrukcje (program counter - adress register in the CPU that
+pints to the next instruction to be executed by the processor) dla kadego wywoania
+systemowego.
+(sudo strace -i df -h)
+df-wyświetla systemy plików i wolne miejsce na nich
+
+trace=[var] odsliadywać tylko specyficzne wywołania systemowe.
+(sudo strace -e trace=write ls)
+
+-o redirect trace message from standard error to a file.
+(sudo strace -o tr_debut.txt ls)
+
+-d pokazać debug informacją.
+(strace -d ls)
