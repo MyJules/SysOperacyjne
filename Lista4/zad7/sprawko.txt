@@ -1,0 +1,12 @@
+Wpusując komędę
+(strace -e trace=read ./a.out)
+
+Możemy zobaczyć że program kończy się sygnałem SIGSEGV co
+znaczy Segmentation fault. Możemy wnioskować że coś żle poszło
+z managementem pamięci. I naprawdę tak jest, w programie
+pointer wychodzi za granicy napisu.
+
+Polecenie -t(czas dnia) lub -T(różnica pomiędzy początkiem i
+końcem każdego wywołania systemowego) można odczytać czas
+wykonania poszczególnych elementów programu.
+(strace -e trace=read -T ./a.out)

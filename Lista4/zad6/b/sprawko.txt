@@ -1,0 +1,7 @@
+Można wejść do poprzedniego zadania i wykonać program
+(strace -e trace=read ./a.out)
+
+Wynik:
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360q\2\0\0\0\0\0"..., 832) = 832
+Hello World !!!
++++ exited with 0 +++

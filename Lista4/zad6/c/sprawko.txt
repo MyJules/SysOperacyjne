@@ -1,0 +1,9 @@
+Odtworzymy plik sprawko.txt
+(pico sprawko.txt)
+
+W innym terminale:
+sudo strace -e trace=open,close,read,write -p [pid]
+
+Widzę tylko polecenie close, w momentach kiedy zapisuję plik.
+Przypuszczam że jest ten plik otwierany tylko w momentach kiedy
+zapisujemy go.
