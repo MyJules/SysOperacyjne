@@ -1,0 +1,19 @@
+Wyjście:
+Hello SCR. Written by thread: Hello SCR. Written by thread: 1
+0
+Hello SCR. Written by thread: 2
+Hello SCR. Written by thread: Hello SCR. Written by thread: 4
+3
+Hello SCR. Written by thread: 5
+Hello SCR. Written by thread: 7
+Hello SCR. Written by thread: 6
+
+Widzimy, że kolejność wykonania wątków jest dowolna, to znaczy że 
+wykonują się one równolegle na różnych jądrach procesora. 
+
+pthread_exit() - powoduje zakończenie procesu. Także jest możliwość 
+wywołania pthread_join() oraz pthread_detach(). pthread_join() 
+wywołuje się z innego wątku i mówi o tym żeby czekać na zakończenie
+podango, natomiast pthread_detach() - wywołuje się w pryzpadkach 
+kiedy dla nas niema różnnicy, czy wątek skończy się czy nie, kiedy
+nie chcemy żeby on coś zwracał.
